@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B208743A-9C69-434A-A706-9F6B99257273}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Account.My.MyApplication</StartupObject>
+    <RootNamespace>Account</RootNamespace>
+    <AssemblyName>Account</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>tfa.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>513FC85228D98C719DD998A70B1CF20624D368D6</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Account_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>e:\accountsetup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>false</CreateWebPageOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Account.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Account.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\cbstritem.vb" />
+    <Compile Include="Classes\Ccomp.vb" />
+    <Compile Include="Classes\CDecomp.vb" />
+    <Compile Include="Classes\ComputerInfo.vb" />
+    <Compile Include="Classes\DataGridViewEnter.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\MemoryManagement.vb" />
+    <Compile Include="Classes\num2word.vb" />
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dschallan.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dschallan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReportLedger.Designer.vb">
+      <DependentUpon>FrmReportLedger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReportLedger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReportTrial.Designer.vb">
+      <DependentUpon>FrmReportTrial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReportTrial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\sledger.Designer.vb">
+      <DependentUpon>sledger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\sledger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddUsers.designer.vb">
+      <DependentUpon>AddUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChallanPrint.Designer.vb">
+      <DependentUpon>ChallanPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChallanPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RefEntry1.Designer.vb">
+      <DependentUpon>RefEntry1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RefEntry1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReport.designer.vb">
+      <DependentUpon>FrmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReport1.Designer.vb">
+      <DependentUpon>FrmReport1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReport1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mAgentList.designer.vb">
+      <DependentUpon>mAgentList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mAgentList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mTransport.Designer.vb">
+      <DependentUpon>mTransport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mTransport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mUserList.designer.vb">
+      <DependentUpon>mUserlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mUserlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Period.Designer.vb">
+      <DependentUpon>Period.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Period.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ref.Designer.vb">
+      <DependentUpon>Ref.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ref.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RefEntry.Designer.vb">
+      <DependentUpon>RefEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RefEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reference2.Designer.vb">
+      <DependentUpon>Reference2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reference2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Register.designer.vb">
+      <DependentUpon>Register.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportViewer.Designer.vb">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServerPath.designer.vb">
+      <DependentUpon>ServerPath.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServerPath.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\splash.Designer.vb">
+      <DependentUpon>splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\transchallan2.Designer.vb">
+      <DependentUpon>transchallan2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\transchallan2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialog1.Designer.vb">
+      <DependentUpon>Dialog1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialog1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransInvoice.Designer.vb">
+      <DependentUpon>TransInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Voucher.Designer.vb">
+      <DependentUpon>Voucher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Voucher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ModAct.vb" />
+    <Compile Include="xAccountsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>xAccountsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\cbItem.vb" />
+    <Compile Include="Classes\NumTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\TransChallanCharges.Designer.vb">
+      <DependentUpon>TransChallanCharges.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransChallanCharges.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mChallanList.Designer.vb">
+      <DependentUpon>mChallanList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mChallanList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mChallanname.designer.vb">
+      <DependentUpon>mChallanname.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mChallanname.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mCharges.Designer.vb">
+      <DependentUpon>mCharges.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mCharges.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mChargesList.Designer.vb">
+      <DependentUpon>mChargesList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mChargesList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mLedgerGroup.Designer.vb">
+      <DependentUpon>mLedgerGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mLedgerGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mTransportList.designer.vb">
+      <DependentUpon>mTransportList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mTransportList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransChallan1.Designer.vb">
+      <DependentUpon>TransChallan1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransChallan1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransChallan.Designer.vb">
+      <DependentUpon>TransChallan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransChallan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyData.Designer.vb">
+      <DependentUpon>CompanyData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyList.Designer.vb">
+      <DependentUpon>CompanyList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LedgerEntry.Designer.vb">
+      <DependentUpon>LedgerEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LedgerEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LedgerList.Designer.vb">
+      <DependentUpon>LedgerList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LedgerList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mCity.Designer.vb">
+      <DependentUpon>mCity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mCity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mCityList.Designer.vb">
+      <DependentUpon>mCityList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mCityList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mState.Designer.vb">
+      <DependentUpon>mState.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mState.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mStateList.Designer.vb">
+      <DependentUpon>mStateList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mStateList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mUser.Designer.vb">
+      <DependentUpon>mUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransChallanItem.Designer.vb">
+      <DependentUpon>TransChallanItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransChallanItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransChallanSearch.Designer.vb">
+      <DependentUpon>TransChallanSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransChallanSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\modCommon.vb" />
+    <Compile Include="Modules\modData.vb" />
+    <Compile Include="Modules\modGlobal.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReportLedger.resx">
+      <DependentUpon>FrmReportLedger.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReportTrial.resx">
+      <DependentUpon>FrmReportTrial.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\sledger.resx">
+      <DependentUpon>sledger.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddUsers.resx">
+      <DependentUpon>AddUsers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChallanPrint.resx">
+      <DependentUpon>ChallanPrint.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RefEntry1.resx">
+      <DependentUpon>RefEntry1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReport.resx">
+      <DependentUpon>FrmReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReport1.resx">
+      <DependentUpon>FrmReport1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mAgentList.resx">
+      <DependentUpon>mAgentList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mTransport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>mTransport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mUserlist.resx">
+      <DependentUpon>mUserlist.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Period.resx">
+      <DependentUpon>Period.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RefEntry.resx">
+      <DependentUpon>RefEntry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reference2.resx">
+      <DependentUpon>Reference2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Register.resx">
+      <DependentUpon>Register.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportViewer.resx">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ServerPath.resx">
+      <DependentUpon>ServerPath.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\splash.resx">
+      <DependentUpon>splash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\transchallan2.resx">
+      <DependentUpon>transchallan2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialog1.resx">
+      <DependentUpon>Dialog1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransChallanCharges.resx">
+      <DependentUpon>TransChallanCharges.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mChallanList.resx">
+      <DependentUpon>mChallanList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mChallanname.resx">
+      <DependentUpon>mChallanname.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mCharges.resx">
+      <DependentUpon>mCharges.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mChargesList.resx">
+      <DependentUpon>mChargesList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mLedgerGroup.resx">
+      <DependentUpon>mLedgerGroup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mTransportList.resx">
+      <DependentUpon>mTransportList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransChallan1.resx">
+      <DependentUpon>TransChallan1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransChallan.resx">
+      <DependentUpon>TransChallan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyData.resx">
+      <DependentUpon>CompanyData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyList.resx">
+      <DependentUpon>CompanyList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LedgerEntry.resx">
+      <DependentUpon>LedgerEntry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LedgerList.resx">
+      <DependentUpon>LedgerList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mCity.resx">
+      <DependentUpon>mCity.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mCityList.resx">
+      <DependentUpon>mCityList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mState.resx">
+      <DependentUpon>mState.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mStateList.resx">
+      <DependentUpon>mStateList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mUser.resx">
+      <DependentUpon>mUser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransChallanItem.resx">
+      <DependentUpon>TransChallanItem.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransChallanSearch.resx">
+      <DependentUpon>TransChallanSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransInvoice.resx">
+      <DependentUpon>TransInvoice.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Voucher.resx">
+      <DependentUpon>Voucher.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\NumTextBox.resx">
+      <DependentUpon>NumTextBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="reports\ChallanDetail.rdlc" />
+    <EmbeddedResource Include="reports\ChallanPrint.rdlc" />
+    <Content Include="reports\RptFreightMargin.rdlc" />
+    <Content Include="reports\RptMarginStatment.rdlc" />
+    <Content Include="reports\RptStaxstatment.rdlc" />
+    <Content Include="reports\RptTdsStatment.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Account_TemporaryKey.pfx" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dschallan.xsc">
+      <DependentUpon>dschallan.xsd</DependentUpon>
+    </None>
+    <None Include="dschallan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dschallan.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dschallan.xss">
+      <DependentUpon>dschallan.xsd</DependentUpon>
+    </None>
+    <None Include="xAccountsDataSet.xsc">
+      <DependentUpon>xAccountsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="xAccountsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>xAccountsDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="xAccountsDataSet.xss">
+      <DependentUpon>xAccountsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\blankdatabase.txt" />
+    <Content Include="bin\Debug\Warehouse.png" />
+    <Content Include="blankdatabase.txt" />
+    <Content Include="Images\Back.png" />
+    <Content Include="Images\BOTTOM.BMP" />
+    <Content Include="Images\Create.png" />
+    <Content Include="Images\Cut.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\Exit.png" />
+    <Content Include="Images\Find.png" />
+    <Content Include="Images\First.png" />
+    <Content Include="Images\Folder.png" />
+    <Content Include="Images\Forward.png" />
+    <Content Include="Images\Go.png" />
+    <Content Include="Images\Goback.png" />
+    <Content Include="Images\Goforward.png" />
+    <Content Include="Images\Help.png" />
+    <Content Include="Images\Hint.png" />
+    <Content Include="Images\Info.png" />
+    <Content Include="Images\Key.png" />
+    <Content Include="Images\Lastrecord.png" />
+    <Content Include="Images\Left-right.png" />
+    <Content Include="Images\Load.png" />
+    <Content Include="Images\Lock.png" />
+    <Content Include="Images\Modify.png" />
+    <Content Include="Images\navigation_back.gif" />
+    <Content Include="Images\New.png" />
+    <Content Include="Images\Next track.png" />
+    <Content Include="Images\NEXT.BMP" />
+    <Content Include="Images\Next.png" />
+    <Content Include="Images\No.png" />
+    <Content Include="Images\OK.png" />
+    <Content Include="Images\Percent.png" />
+    <Content Include="Images\Playback.png" />
+    <Content Include="Images\popup-back.gif" />
+    <Content Include="Images\Previous record.png" />
+    <Content Include="Images\PREVIOUS.BMP" />
+    <Content Include="Images\Previous.png" />
+    <Content Include="Images\Print.png" />
+    <Content Include="Images\Question.png" />
+    <Content Include="Images\Red star.png" />
+    <Content Include="Images\Redo.png" />
+    <Content Include="Images\RedStar.png" />
+    <Content Include="Images\Refresh.png" />
+    <Content Include="Images\Remove.png" />
+    <Content Include="Images\Repair.png" />
+    <Content Include="Images\Report.png" />
+    <Content Include="Images\Rewind.png" />
+    <Content Include="Images\Save.png" />
+    <Content Include="Images\SavedStar.gif" />
+    <Content Include="Images\SavedStar.png" />
+    <Content Include="Images\save_icon.gif" />
+    <Content Include="Images\search.gif" />
+    <Content Include="Images\Search.png" />
+    <Content Include="Images\star3.png" />
+    <Content Include="Images\Stop sign.png" />
+    <Content Include="Images\Stop.png" />
+    <Content Include="Images\Sum.png" />
+    <Content Include="Images\Text preview.png" />
+    <Content Include="Images\Text.png" />
+    <Content Include="Images\Thumbs down.png" />
+    <Content Include="Images\Thumbs up.png" />
+    <Content Include="Images\toolbar_background.gif" />
+    <Content Include="Images\Toolbox.png" />
+    <Content Include="Images\TOP.BMP" />
+    <Content Include="Images\Top.png" />
+    <Content Include="Images\Trash.png" />
+    <Content Include="Images\Turn off.png" />
+    <Content Include="Images\Undo.png" />
+    <Content Include="Images\Unlock.png" />
+    <Content Include="Images\Up-down.png" />
+    <Content Include="Images\up.gif" />
+    <Content Include="Images\Up.png" />
+    <Content Include="Images\Update.png" />
+    <Content Include="Images\Upload.png" />
+    <Content Include="Images\User group.png" />
+    <Content Include="Images\View.png" />
+    <Content Include="Images\Warehouse.png" />
+    <Content Include="Images\Warning.png" />
+    <Content Include="Images\Yes.png" />
+    <Content Include="Images\Zoom.png" />
+    <Content Include="bin\Debug\InsertRecord.txt" />
+    <Content Include="InsertRecord.txt" />
+    <Content Include="tfa.ico" />
+    <Content Include="tfa_pendingList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.8.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2008 Report Viewer</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Reports\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

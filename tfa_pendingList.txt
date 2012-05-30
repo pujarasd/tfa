@@ -1,0 +1,30 @@
+Shailesh
+--------
+1)	Period Menu --- Done.
+2)	a) Voucher entry date should not be out of current period
+	b) Voucher entry date should not be lesset than Book start date.
+7)	Voucher Entry - Call Ref Entry form where ledger type - bill-to-bill
+8)	Voucher Entry - Combo filling for sale/pur/dr/cr note/journal / Contra
+9)	Voucher Entry - Options - contra in recp/pay
+10)	Challan Entry - On Save/delete/edit - effect to data table -- done
+11)	Invoice Entry - in Inventory Entry. --- priority
+12)	Reports:
+	1)	cHALLAN PRINTING --- done
+	2)	INVOICE PRINTING --- priority
+13)	Licencing - system
+
+Guarav
+------
+3)	Ledger Group add button in Ledger Entry ---done
+4)	Call Ref Entry form in Opening Balance in Ledger Entry when Bill-to-Bill --- pending dependancy - refentry.vb
+5)	Opening Balance textbox position at last. -- done
+6)	City Master - entry form caption - add from/to/payable at - done
+11)	Reports Integration and testing. --- partly
+12)	Reports: 
+	3)	REST OF REPORT TESTING - ENHANCING -- partly
+
+
+Road Map
+1)	Options Form --- roadmap
+13)	Implement User Rights --- dependancy userrights
+14)	User Rights

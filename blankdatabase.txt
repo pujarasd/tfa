@@ -1,0 +1,606 @@
+﻿SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mAgent]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mAgent](
+	[Agent] [varchar](100) NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_mAgent] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mTransport]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mTransport](
+	[Transport] [varchar](100) NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_mTransport] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mLedgerDetails]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mLedgerDetails](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[LedgerId] [int] NOT NULL CONSTRAINT [DF_mLedgerDetails_LedgerId]  DEFAULT ((0)),
+	[Owner] [varchar](50) NULL,
+	[Address] [varchar](500) NULL,
+	[CityId] [int] NULL,
+	[Pin] [varchar](15) NULL,
+	[Telephone] [varchar](50) NULL,
+	[Fax] [varchar](50) NULL,
+	[Mobile] [varchar](50) NULL,
+	[email] [varchar](100) NULL,
+	[LST] [varchar](50) NULL,
+	[CST] [varchar](50) NULL,
+	[PAN] [varchar](10) NULL,
+	[CreditDays] [int] NOT NULL CONSTRAINT [DF_mLedgerDetails_CreditDays]  DEFAULT ((0)),
+	[SideDays] [int] NOT NULL CONSTRAINT [DF_mLedgerDetails_SideDays]  DEFAULT ((0)),
+	[TDSRate] [decimal](5, 3) NOT NULL CONSTRAINT [DF_mLedgerDetails_TDSRate]  DEFAULT ((0)),
+	[DiscountRate] [decimal](5, 3) NOT NULL CONSTRAINT [DF_mLedgerDetails_DiscountRate]  DEFAULT ((0)),
+	[AgentId] [int] NOT NULL CONSTRAINT [DF_mLedgerDetails_Agent]  DEFAULT ((0)),
+	[TransportId] [int] NOT NULL CONSTRAINT [DF_mLedgerDetails_Transport]  DEFAULT ((0)),
+	[CreditAmount] [decimal](12, 2) NOT NULL CONSTRAINT [DF_mLedgerDetails_CreditAmount]  DEFAULT ((0))
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ttranschallan]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[ttranschallan](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[BookId] [int] NOT NULL CONSTRAINT [DF_tchallan_BookId]  DEFAULT ((0)),
+	[Challan] [int] NOT NULL CONSTRAINT [DF_tchallan_Challan]  DEFAULT ((0)),
+	[Date] [datetime] NULL CONSTRAINT [DF_tchallan_Date]  DEFAULT (getdate()),
+	[CustId] [int] NULL CONSTRAINT [DF_tchallan_CustId]  DEFAULT ((0)),
+	[TransportId] [int] NULL CONSTRAINT [DF_tchallan_LorryId]  DEFAULT ((0)),
+	[Mode] [char](1) NOT NULL CONSTRAINT [DF_tchallan_Mode]  DEFAULT ('B'),
+	[Narration] [varchar](500) NULL,
+	[GrossAmount] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_GrossAmount]  DEFAULT ((0)),
+	[Commission] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_Commission]  DEFAULT ((0)),
+	[Labour] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_Labour]  DEFAULT ((0)),
+	[Tds_rate] [decimal](6, 3) NOT NULL CONSTRAINT [DF_tchallan_Tds_rate]  DEFAULT ((0)),
+	[Tds_amount] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_Tds_amount]  DEFAULT ((0)),
+	[Shortage] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_Shortage]  DEFAULT ((0)),
+	[Advance] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_Advance]  DEFAULT ((0)),
+	[Amount] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_Amount]  DEFAULT ((0)),
+	[Payable] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallan_Payable]  DEFAULT ((0)),
+	[LorryId] [int] NOT NULL CONSTRAINT [DF_ttranschallan_LorryId]  DEFAULT ((0)),
+	[ShipNo] [varchar](50) NULL,
+	[EgpNo] [varchar](50) NULL,
+	[DIno] [varchar](50) NULL,
+	[Driver] [varchar](50) NULL,
+	[Owner] [varchar](50) NULL,
+	[PayableAt] [int] NOT NULL CONSTRAINT [DF_ttranschallan_PayableAt]  DEFAULT ((0)),
+	[CityFrom] [int] NOT NULL CONSTRAINT [DF_ttranschallan_CityFrom]  DEFAULT ((0)),
+	[CityTo] [int] NOT NULL CONSTRAINT [DF_ttranschallan_CityTo]  DEFAULT ((0)),
+	[LRNo] [nvarchar](50) NOT NULL,
+	[LRDate] [datetime] NOT NULL CONSTRAINT [DF_ttranschallan_LRDate]  DEFAULT (getdate()),
+	[Inv] [nvarchar](50) NOT NULL,
+	[VarGrossAmt] [decimal](18, 2) NOT NULL CONSTRAINT [DF_ttranschallan_VarGrossAmt]  DEFAULT ((0)),
+ CONSTRAINT [PK_tchallan] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mItem]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mItem](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Item] [varchar](100) NOT NULL,
+	[Qty] [decimal](15, 3) NOT NULL CONSTRAINT [DF_Item_Qty]  DEFAULT ((0)),
+	[Cost] [decimal](15, 3) NOT NULL CONSTRAINT [DF_Item_Cost]  DEFAULT ((0)),
+	[Date] [datetime] NOT NULL,
+	[BBB] [bit] NOT NULL CONSTRAINT [DF_Item_BBB]  DEFAULT ((0)),
+	[GroupId] [int] NOT NULL,
+ CONSTRAINT [PK_Item] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [IX_Item] UNIQUE NONCLUSTERED 
+(
+	[Item] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mItemGroup]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mItemGroup](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[GroupName] [varchar](100) NOT NULL,
+	[GroupId] [int] NOT NULL,
+	[GroupLevel] [int] NOT NULL,
+ CONSTRAINT [PK_mItemGroup] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [IX_mItemGroup] UNIQUE NONCLUSTERED 
+(
+	[GroupName] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mLedger]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mLedger](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ledger] [varchar](100) NOT NULL,
+	[Amount] [decimal](18, 0) NOT NULL CONSTRAINT [DF_Ledger_Amount]  DEFAULT ((0)),
+	[Date] [datetime] NOT NULL,
+	[BBB] [bit] NOT NULL CONSTRAINT [DF_Ledger_BBB]  DEFAULT ((0)),
+	[stock] [bit] NOT NULL CONSTRAINT [DF_Ledger_stock]  DEFAULT ((0)),
+	[GroupId] [int] NOT NULL,
+ CONSTRAINT [PK_Ledger] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [IX_Ledger] UNIQUE NONCLUSTERED 
+(
+	[Ledger] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tdataDetails]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[tdataDetails](
+	[id] [int] NOT NULL,
+	[VoucherId] [int] NOT NULL,
+	[AccId] [int] NOT NULL,
+	[Amount] [decimal](18, 2) NOT NULL,
+	[Narration] [varchar](2000) NOT NULL,
+	[Date] [datetime] NOT NULL,
+ CONSTRAINT [PK_dataDetails] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mUsers]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mUsers](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [varchar](50) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+	[IsAdmin] [bit] NOT NULL CONSTRAINT [DF_mUsers_UserType]  DEFAULT ((0)),
+	[IsActive] [bit] NOT NULL CONSTRAINT [DF_mUsers_IsActive]  DEFAULT ((1)),
+ CONSTRAINT [PK_mUsers] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tItemData]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[tItemData](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[voucherId] [int] NOT NULL,
+	[VoucherDate] [datetime] NOT NULL,
+	[ItemId] [int] NOT NULL,
+	[Qty] [decimal](18, 3) NULL,
+	[UnitId] [int] NOT NULL,
+	[PackingId] [int] NOT NULL,
+	[PackingUnit] [decimal](18, 3) NOT NULL,
+	[Rate] [decimal](18, 3) NOT NULL,
+	[discountPercent] [decimal](5, 2) NOT NULL,
+	[discountAmount] [decimal](18, 2) NOT NULL,
+	[taxid] [int] NOT NULL,
+	[Taxrate] [decimal](6, 3) NOT NULL,
+	[TaxAmount] [decimal](18, 3) NOT NULL,
+	[Amount] [decimal](18, 2) NOT NULL,
+	[AccId] [int] NOT NULL,
+ CONSTRAINT [PK_tItemData] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tTaxData]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[tTaxData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VoucherId] [int] NOT NULL,
+	[TaxId] [int] NOT NULL,
+	[TaxRate] [decimal](6, 3) NOT NULL,
+	[TaxAmount] [decimal](18, 2) NOT NULL,
+	[TaxOnAmount] [decimal](18, 2) NOT NULL,
+ CONSTRAINT [PK_tTaxData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tDataMain]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[tDataMain](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[VoucherNo] [int] NOT NULL,
+	[VoucherPrefix] [varchar](50) NOT NULL CONSTRAINT [DF_tDataMain_VoucherPrefix]  DEFAULT (''),
+	[VoucherSuffix] [varchar](50) NOT NULL CONSTRAINT [DF_tDataMain_VoucherSuffix]  DEFAULT (''),
+	[Date] [datetime] NOT NULL,
+	[Amount] [decimal](18, 2) NULL CONSTRAINT [DF_tDataMain_Amount]  DEFAULT ((0)),
+	[Narration] [varchar](2000) NULL,
+	[ChqNo] [varchar](50) NULL,
+	[ChqDate] [datetime] NULL,
+	[Bank] [varchar](50) NULL,
+	[Branch] [varchar](50) NULL,
+	[AccId] [int] NOT NULL,
+	[VoucherTypeId] [int] NOT NULL,
+ CONSTRAINT [PK_tDataMain] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mTransRate]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mTransRate](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Place] [varchar](50) NOT NULL,
+	[Rate] [decimal](18, 2) NOT NULL CONSTRAINT [DF_mTransRate_Rate]  DEFAULT ((0)),
+	[CityId] [int] NOT NULL,
+ CONSTRAINT [PK_mTransRate] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mUserCo]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mUserCo](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[coId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[FinalAccount] [bit] NOT NULL,
+	[TrialBalance] [bit] NOT NULL,
+ CONSTRAINT [PK_mUserCo] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mUserRights]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mUserRights](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[VoucherTypeId] [int] NOT NULL,
+	[Rights] [varchar](10) NOT NULL,
+ CONSTRAINT [PK_mUserRights] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mTransDetails]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mTransDetails](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[AcId] [int] NOT NULL,
+	[LorryNo] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_mTransDetails] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mVoucher]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mVoucher](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Voucher] [varchar](50) NOT NULL,
+	[typeid] [int] NOT NULL,
+	[Prefix] [varchar](10) NOT NULL,
+	[suffix] [varchar](50) NOT NULL,
+	[AutoNo] [bit] NOT NULL,
+	[AutoStart] [int] NOT NULL,
+ CONSTRAINT [PK_Voucher] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mChallanName]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mChallanName](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ChallanName] [varchar](50) NOT NULL,
+	[AccountId] [int] NOT NULL CONSTRAINT [DF_mChallanName_AccountId]  DEFAULT ((0)),
+	[Prefix] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_mChallanName] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mstate]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mstate](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[state] [varchar](50) NOT NULL,
+	[IsActive] [bit] NOT NULL CONSTRAINT [DF_mstate_IsActive]  DEFAULT ((1)),
+	[CountryId] [int] NOT NULL CONSTRAINT [DF_mstate_CountryId]  DEFAULT ((0)),
+ CONSTRAINT [PK_mstate] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tTransChallanCharge]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[tTransChallanCharge](
+	[ChallanId] [int] NOT NULL CONSTRAINT [DF_TransChallanCharge_ChallanId]  DEFAULT ((0)),
+	[ChargeId] [int] NOT NULL CONSTRAINT [DF_TransChallanCharge_ChargeId]  DEFAULT ((0)),
+	[ChargeAmt] [decimal](18, 2) NOT NULL CONSTRAINT [DF_TransChallanCharge_ChargeAmt]  DEFAULT ((0)),
+	[AmountOn] [decimal](18, 2) NOT NULL CONSTRAINT [DF_TransChallanCharge_AmountOn]  DEFAULT ((0))
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ttranschallanDetails]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[ttranschallanDetails](
+	[ChallanId] [int] NOT NULL CONSTRAINT [DF_ttranschallanDetails_ChallanId]  DEFAULT ((0)),
+	[PlaceId] [int] NOT NULL CONSTRAINT [DF_ttranschallanDetails_PlaceId]  DEFAULT ((0)),
+	[LorryId] [int] NOT NULL CONSTRAINT [DF_ttranschallanDetails_LorryId]  DEFAULT ((0)),
+	[GrNo] [varchar](50) NULL,
+	[GrDate] [datetime] NULL,
+	[ShipNo] [varchar](50) NULL,
+	[EgpNo] [varchar](50) NULL,
+	[DiNo] [varchar](50) NULL,
+	[Grade] [varchar](50) NULL,
+	[Bags] [int] NOT NULL CONSTRAINT [DF_tchallanDetails_Bags]  DEFAULT ((0)),
+	[Weight] [decimal](18, 3) NOT NULL CONSTRAINT [DF_tchallanDetails_Weight]  DEFAULT ((0)),
+	[Rate] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallanDetails_Rate]  DEFAULT ((0)),
+	[Amount] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallanDetails_Amount]  DEFAULT ((0)),
+	[RateDiff] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallanDetails_RateDiff]  DEFAULT ((0)),
+	[Labour] [decimal](18, 2) NOT NULL CONSTRAINT [DF_tchallanDetails_Labour]  DEFAULT ((0)),
+	[Shortage] [decimal](18, 3) NOT NULL CONSTRAINT [DF_tchallanDetails_Shortage]  DEFAULT ((0)),
+	[WeightDiff] [decimal](18, 3) NOT NULL CONSTRAINT [DF_ttranschallanDetails_WeightDiff]  DEFAULT ((0)),
+	[Remark] [varchar](500) NULL,
+	[Description] [varchar](500) NULL
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mLedgerGroup]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mLedgerGroup](
+	[Id] [int] NOT NULL,
+	[GroupName] [varchar](100) NOT NULL,
+	[GroupId] [int] NOT NULL,
+	[GroupLevel] [int] NOT NULL,
+ CONSTRAINT [PK_mLedgerGroup] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [IX_mLedgerGroup] UNIQUE NONCLUSTERED 
+(
+	[GroupName] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mcountry]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mcountry](
+	[Id] [int] IDENTITY(0,1) NOT NULL,
+	[country] [varchar](50) NOT NULL,
+	[IsActive] [bit] NOT NULL CONSTRAINT [DF_mcountry_IsActive]  DEFAULT ((1)),
+ CONSTRAINT [PK_mcountry] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mCharges]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mCharges](
+	[Id] [int] IDENTITY(0,1) NOT NULL,
+	[Charge] [varchar](50) NOT NULL,
+	[AcId] [int] NOT NULL CONSTRAINT [DF_mCharges_AcId]  DEFAULT ((0)),
+	[Rate] [decimal](6, 3) NOT NULL CONSTRAINT [DF_mCharges_Rate]  DEFAULT ((0)),
+	[RateOn] [int] NOT NULL CONSTRAINT [DF_mCharges_RateOn]  DEFAULT ((0)),
+	[AddLess] [bit] NOT NULL CONSTRAINT [DF_mCharges_AddLess]  DEFAULT ((0)),
+ CONSTRAINT [PK_mCharges] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mCity]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mCity](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[City] [varchar](50) NOT NULL,
+	[IsActive] [bit] NOT NULL CONSTRAINT [DF_mCity_IsActive]  DEFAULT ((1)),
+	[StateId] [int] NOT NULL,
+	[CountryId] [int] NOT NULL CONSTRAINT [DF_mCity_CountryId]  DEFAULT ((0)),
+	[cType] [nchar](10) NOT NULL,
+ CONSTRAINT [PK_mCity] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mChargeOn]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mChargeOn](
+	[ctId] [int] NOT NULL,
+	[ChargeOn] [nchar](10) NOT NULL,
+ CONSTRAINT [PK_mChargeOn] PRIMARY KEY CLUSTERED 
+(
+	[ctId] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+~
+SET ANSI_NULLS ON
+~
+SET QUOTED_IDENTIFIER ON
+~
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[mCompany]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[mCompany](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Company] [varchar](100) NOT NULL,
+	[FY_Start] [datetime] NULL,
+	[Book_Start] [datetime] NULL,
+	[Address] [varchar](100) NULL,
+	[City] [varchar](50) NULL,
+	[State] [varchar](50) NULL,
+	[Country] [varchar](50) NULL,
+	[Pin] [varchar](15) NULL,
+	[Phone] [varchar](100) NULL,
+	[Fax] [varchar](100) NULL,
+	[Mobile] [varchar](100) NULL,
+	[PAN] [varchar](50) NULL,
+	[TAN] [varchar](50) NULL,
+	[TIN] [varchar](50) NULL,
+	[MIN] [varchar](50) NULL,
+	[VAT] [varchar](50) NULL,
+	[LST] [varchar](50) NULL,
+	[CST] [varchar](50) NULL,
+	[EXCISE] [varchar](50) NULL,
+	[SERVICETAX] [varchar](50) NULL,
+	[PROFTAX] [varchar](50) NULL,
+	[PF_NO] [varchar](50) NULL,
+	[ESIC_NO] [varchar](50) NULL,
+	[MAIN_SIGN_NAME] [varchar](50) NULL,
+	[MAIN_SIGN_DESG] [varchar](50) NULL,
+	[AUTH_SIGN_NAME] [varchar](50) NULL,
+	[AUTH_SIGN_DESG] [varchar](50) NULL,
+ CONSTRAINT [PK_mCompany] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [IX_mCompany] UNIQUE NONCLUSTERED 
+(
+	[Company] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
