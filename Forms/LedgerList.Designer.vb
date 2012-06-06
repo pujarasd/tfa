@@ -54,7 +54,7 @@ Partial Class LedgerList
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 38)
         Me.btnClose.TabIndex = 1
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Back"
         Me.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnClose.UseVisualStyleBackColor = True
         '
@@ -84,7 +84,7 @@ Partial Class LedgerList
         '
         'btnDelete
         '
-        Me.btnDelete.Image = Global.Account.My.Resources.Resources.delete
+        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
         Me.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnDelete.Location = New System.Drawing.Point(456, 356)
         Me.btnDelete.Name = "btnDelete"

@@ -117,26 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cmdCancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJMSURBVDhPnZNbSFRRFIanCzlOokVXu2DzYBBClFEikREUgYEY6YNUlJWkRjn64iCJoVRmD2Em
-        glaThAVmGlg+JJUVXcgwzUozyRy1SZszZ27OnDOaX3swqIiEccN+2uv/1vrXWlujmeIEFcnMLZSYKua/
-        b7OzJdZfsxFZPh1AlkRyrQPTgI/lFwIFGGwk1jlw/Jig7L3KLONIABaMMvsanQwqEzyyjHOyQ2HrTedY
-        TLVD2LETVSkTWSqhL7aiL7ESdqTvD3i+g/TmUb774Hb/GIY2FcNrhSbLGA9HfNwyq1z+rFDS7aHgnYeE
-        px6CD32cBMw448LweBSrX2weJ79DJe+NQvpLL5nPPKQ+cbOn2cXOu0621NuJrpFZZbITfLAHTWi5k7Mi
-        2KpCXf84RcJ3wVuFnFYvh4U46YGb7fdcbG5wEn3DzmqTzEoxmaUVdrQpH9AsrHBR1avSLk9Q3OWjqFMl
-        VwAzRPa9oqrdzW52NDmJFY1dVyMAV2ysuCSxqFRmTlL7pIWQYgfZzz2YRAV5wvvxV15ShcfkFg/x9z3E
-        NbrZUOtizXUHEZV2llyUCTtvY2ZC2+8m6gpsHBDZTnf7SHvhJcUvbpDYVjvCxhoLUVe/oS+zEH5ukPmF
-        ZnT5A2h2tf494uBcifh6max2laQWLzEVfeiNXUQWfiHC2Eu4uAtyPhF2rAddeg/axM5/d0SbNUxstY39
-        rQqbqoYJNfQGsEi/fkZQhoW1lRJxd+zMO2EOHODn6I5+ZdmpIRYbh6YH8EO0aUOEZA5OCfgJtTGcq6+x
-        rgkAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="Ep1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAIBYAAAEAIACACwAAFgAAACgAAAAgAAAALAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

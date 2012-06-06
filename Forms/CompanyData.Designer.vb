@@ -600,7 +600,7 @@ Partial Class CompanyData
         '
         'btnCancel
         '
-        Me.btnCancel.Image = Global.Account.My.Resources.Resources.Back
+        Me.btnCancel.Image = Global.Account.My.Resources.Resources.cancel
         Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCancel.Location = New System.Drawing.Point(502, 361)
         Me.btnCancel.Name = "btnCancel"

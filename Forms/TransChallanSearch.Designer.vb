@@ -22,6 +22,7 @@ Partial Class TransChallanSearch
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TransChallanSearch))
         Me.cmbSearchType = New System.Windows.Forms.ComboBox
         Me.btnSearch = New System.Windows.Forms.Button
         Me.txtSearch = New System.Windows.Forms.TextBox
@@ -41,11 +42,14 @@ Partial Class TransChallanSearch
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(467, 8)
+        Me.btnSearch.Image = Global.Account.My.Resources.Resources.Zoom
+        Me.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSearch.Location = New System.Drawing.Point(480, 6)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.Size = New System.Drawing.Size(64, 23)
         Me.btnSearch.TabIndex = 10
         Me.btnSearch.Text = "&Search"
+        Me.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSearch.UseVisualStyleBackColor = True
         '
         'txtSearch
@@ -58,11 +62,14 @@ Partial Class TransChallanSearch
         'btnClose
         '
         Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnClose.Location = New System.Drawing.Point(550, 323)
+        Me.btnClose.Image = Global.Account.My.Resources.Resources.Back
+        Me.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnClose.Location = New System.Drawing.Point(567, 323)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.Size = New System.Drawing.Size(58, 23)
         Me.btnClose.TabIndex = 8
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Back"
+        Me.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'dgv
@@ -78,9 +85,9 @@ Partial Class TransChallanSearch
         '
         'btnAll
         '
-        Me.btnAll.Location = New System.Drawing.Point(548, 7)
+        Me.btnAll.Location = New System.Drawing.Point(550, 6)
         Me.btnAll.Name = "btnAll"
-        Me.btnAll.Size = New System.Drawing.Size(75, 23)
+        Me.btnAll.Size = New System.Drawing.Size(73, 23)
         Me.btnAll.TabIndex = 10
         Me.btnAll.Text = "Show &All"
         Me.btnAll.UseVisualStyleBackColor = True
@@ -96,6 +103,7 @@ Partial Class TransChallanSearch
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.dgv)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TransChallanSearch"
         Me.Text = "TransChallanSearch"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()

@@ -139,7 +139,7 @@ Partial Class LedgerEntry
         '
         Me.btnCancel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancel.Image = Global.Account.My.Resources.Resources.Back
+        Me.btnCancel.Image = Global.Account.My.Resources.Resources.cancel
         Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCancel.Location = New System.Drawing.Point(637, 353)
         Me.btnCancel.Name = "btnCancel"

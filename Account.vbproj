@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B208743A-9C69-434A-A706-9F6B99257273}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -674,10 +674,14 @@
     <Content Include="bin\Debug\Warehouse.png" />
     <Content Include="blankdatabase.txt" />
     <Content Include="Images\Back.png" />
-    <Content Include="Images\BOTTOM.BMP" />
+    <Content Include="Images\Calendar_16x16.png" />
+    <None Include="Images\cart.png" />
+    <None Include="Images\cancel.png" />
     <Content Include="Images\Create.png" />
     <Content Include="Images\Cut.png" />
     <Content Include="Images\delete.gif" />
+    <None Include="Images\document_prepare.png" />
+    <None Include="Images\delete.png" />
     <Content Include="Images\edit.gif" />
     <Content Include="Images\Exit.png" />
     <Content Include="Images\Find.png" />
@@ -687,8 +691,9 @@
     <Content Include="Images\Go.png" />
     <Content Include="Images\Goback.png" />
     <Content Include="Images\Goforward.png" />
-    <Content Include="Images\Help.png" />
+    <Content Include="Images\help.png" />
     <Content Include="Images\Hint.png" />
+    <Content Include="Images\Home_16x16.png" />
     <Content Include="Images\Info.png" />
     <Content Include="Images\Key.png" />
     <Content Include="Images\Lastrecord.png" />
@@ -699,7 +704,6 @@
     <Content Include="Images\navigation_back.gif" />
     <Content Include="Images\New.png" />
     <Content Include="Images\Next track.png" />
-    <Content Include="Images\NEXT.BMP" />
     <Content Include="Images\Next.png" />
     <Content Include="Images\No.png" />
     <Content Include="Images\OK.png" />
@@ -707,7 +711,6 @@
     <Content Include="Images\Playback.png" />
     <Content Include="Images\popup-back.gif" />
     <Content Include="Images\Previous record.png" />
-    <Content Include="Images\PREVIOUS.BMP" />
     <Content Include="Images\Previous.png" />
     <Content Include="Images\Print.png" />
     <Content Include="Images\Question.png" />
@@ -725,17 +728,18 @@
     <Content Include="Images\save_icon.gif" />
     <Content Include="Images\search.gif" />
     <Content Include="Images\Search.png" />
+    <None Include="Images\setting_tools.png" />
     <Content Include="Images\star3.png" />
     <Content Include="Images\Stop sign.png" />
     <Content Include="Images\Stop.png" />
     <Content Include="Images\Sum.png" />
+    <None Include="Images\tab_go.png" />
     <Content Include="Images\Text preview.png" />
     <Content Include="Images\Text.png" />
     <Content Include="Images\Thumbs down.png" />
     <Content Include="Images\Thumbs up.png" />
     <Content Include="Images\toolbar_background.gif" />
     <Content Include="Images\Toolbox.png" />
-    <Content Include="Images\TOP.BMP" />
     <Content Include="Images\Top.png" />
     <Content Include="Images\Trash.png" />
     <Content Include="Images\Turn off.png" />
@@ -747,13 +751,16 @@
     <Content Include="Images\Update.png" />
     <Content Include="Images\Upload.png" />
     <Content Include="Images\User group.png" />
+    <None Include="Images\user.png" />
     <Content Include="Images\View.png" />
     <Content Include="Images\Warehouse.png" />
     <Content Include="Images\Warning.png" />
+    <Content Include="Images\widescreen.png" />
     <Content Include="Images\Yes.png" />
     <Content Include="Images\Zoom.png" />
     <Content Include="bin\Debug\InsertRecord.txt" />
     <Content Include="InsertRecord.txt" />
+    <None Include="Resources\document_prepare.png" />
     <Content Include="tfa.ico" />
     <Content Include="tfa_pendingList.txt" />
   </ItemGroup>

@@ -265,20 +265,26 @@ Partial Class TransChallan2
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(13, 2)
+        Me.btnSave.Image = Global.Account.My.Resources.Resources.Save
+        Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSave.Location = New System.Drawing.Point(3, 2)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.Size = New System.Drawing.Size(59, 25)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Save"
+        Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(90, 2)
+        Me.btnCancel.Image = Global.Account.My.Resources.Resources.cancel
+        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCancel.Location = New System.Drawing.Point(65, 3)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.Size = New System.Drawing.Size(61, 25)
         Me.btnCancel.TabIndex = 1
         Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'pnlMain
@@ -1034,9 +1040,9 @@ Partial Class TransChallan2
         Me.pnlsave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlsave.Controls.Add(Me.btnCancel)
         Me.pnlsave.Controls.Add(Me.btnSave)
-        Me.pnlsave.Location = New System.Drawing.Point(701, 457)
+        Me.pnlsave.Location = New System.Drawing.Point(747, 457)
         Me.pnlsave.Name = "pnlsave"
-        Me.pnlsave.Size = New System.Drawing.Size(179, 27)
+        Me.pnlsave.Size = New System.Drawing.Size(128, 30)
         Me.pnlsave.TabIndex = 3
         '
         'tbNav
@@ -1165,6 +1171,7 @@ Partial Class TransChallan2
         Me.Controls.Add(Me.pnlsave)
         Me.Controls.Add(Me.pnlMain)
         Me.Controls.Add(Me.tbEdit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "TransChallan2"
         Me.Text = "Challan"

@@ -22,6 +22,7 @@ Partial Class Reference2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reference2))
         Me.pnlSave = New System.Windows.Forms.TableLayoutPanel
         Me.OK_Button = New System.Windows.Forms.Button
         Me.Cancel_Button = New System.Windows.Forms.Button
@@ -59,36 +60,42 @@ Partial Class Reference2
         '
         Me.pnlSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlSave.ColumnCount = 2
-        Me.pnlSave.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.pnlSave.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.pnlSave.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.72603!))
+        Me.pnlSave.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.27397!))
         Me.pnlSave.Controls.Add(Me.OK_Button, 0, 0)
         Me.pnlSave.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.pnlSave.Location = New System.Drawing.Point(495, 274)
+        Me.pnlSave.Location = New System.Drawing.Point(519, 274)
         Me.pnlSave.Name = "pnlSave"
         Me.pnlSave.RowCount = 1
         Me.pnlSave.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.pnlSave.Size = New System.Drawing.Size(146, 29)
+        Me.pnlSave.Size = New System.Drawing.Size(129, 35)
         Me.pnlSave.TabIndex = 9
         '
         'OK_Button
         '
         Me.OK_Button.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.OK_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.OK_Button.Location = New System.Drawing.Point(3, 3)
+        Me.OK_Button.DialogResult = System.Windows.Forms.DialogResult.OK
+        Me.OK_Button.Image = Global.Account.My.Resources.Resources.OK
+        Me.OK_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.OK_Button.Location = New System.Drawing.Point(3, 5)
         Me.OK_Button.Name = "OK_Button"
-        Me.OK_Button.Size = New System.Drawing.Size(67, 23)
+        Me.OK_Button.Size = New System.Drawing.Size(45, 25)
         Me.OK_Button.TabIndex = 0
-        Me.OK_Button.Text = "OK"
+        Me.OK_Button.Text = "&Ok"
+        Me.OK_Button.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Cancel_Button
         '
         Me.Cancel_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel_Button.Location = New System.Drawing.Point(76, 3)
+        Me.Cancel_Button.Image = Global.Account.My.Resources.Resources.cancel
+        Me.Cancel_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Cancel_Button.Location = New System.Drawing.Point(56, 5)
         Me.Cancel_Button.Name = "Cancel_Button"
-        Me.Cancel_Button.Size = New System.Drawing.Size(67, 23)
+        Me.Cancel_Button.Size = New System.Drawing.Size(67, 25)
         Me.Cancel_Button.TabIndex = 1
-        Me.Cancel_Button.Text = "Cancel"
+        Me.Cancel_Button.Text = "&Cancel"
+        Me.Cancel_Button.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblAccount
         '
@@ -166,20 +173,26 @@ Partial Class Reference2
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(484, 53)
+        Me.btnSave.Image = Global.Account.My.Resources.Resources.Save
+        Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSave.Location = New System.Drawing.Point(500, 52)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.Size = New System.Drawing.Size(66, 25)
         Me.btnSave.TabIndex = 13
         Me.btnSave.Text = "&Save"
+        Me.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(565, 53)
+        Me.btnCancel.Image = Global.Account.My.Resources.Resources.cancel
+        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCancel.Location = New System.Drawing.Point(572, 52)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.Size = New System.Drawing.Size(68, 25)
         Me.btnCancel.TabIndex = 14
         Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'cmbRefNo
@@ -353,6 +366,7 @@ Partial Class Reference2
         Me.Controls.Add(Me.lblAccount)
         Me.Controls.Add(Me.pnlSave)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Reference2"

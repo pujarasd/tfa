@@ -23,6 +23,7 @@ Partial Class mChallanname
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mChallanname))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
         Me.cmdOk = New System.Windows.Forms.Button
         Me.cmdCancel = New System.Windows.Forms.Button
@@ -49,27 +50,33 @@ Partial Class mChallanname
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(146, 29)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(146, 34)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'cmdOk
         '
         Me.cmdOk.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cmdOk.Location = New System.Drawing.Point(3, 3)
+        Me.cmdOk.Image = Global.Account.My.Resources.Resources.Save
+        Me.cmdOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdOk.Location = New System.Drawing.Point(3, 4)
         Me.cmdOk.Name = "cmdOk"
-        Me.cmdOk.Size = New System.Drawing.Size(67, 23)
+        Me.cmdOk.Size = New System.Drawing.Size(67, 26)
         Me.cmdOk.TabIndex = 0
-        Me.cmdOk.Text = "OK"
+        Me.cmdOk.Text = "&Save"
+        Me.cmdOk.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'cmdCancel
         '
         Me.cmdCancel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cmdCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.cmdCancel.Location = New System.Drawing.Point(76, 3)
+        Me.cmdCancel.Image = Global.Account.My.Resources.Resources.cancel
+        Me.cmdCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdCancel.Location = New System.Drawing.Point(76, 5)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(67, 23)
         Me.cmdCancel.TabIndex = 1
-        Me.cmdCancel.Text = "Cancel"
+        Me.cmdCancel.Text = "&Cancel"
+        Me.cmdCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtChallanname
         '
@@ -137,6 +144,7 @@ Partial Class mChallanname
         Me.Controls.Add(Me.lblChallanname)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False

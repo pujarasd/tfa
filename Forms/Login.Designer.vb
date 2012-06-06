@@ -25,14 +25,14 @@ Partial Class Login
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-        Me.btnLogin = New System.Windows.Forms.Button
-        Me.btnCancel = New System.Windows.Forms.Button
         Me.lbluser = New System.Windows.Forms.Label
         Me.txtuser = New System.Windows.Forms.TextBox
         Me.txtpassword = New System.Windows.Forms.TextBox
-        Me.lblpassword = New System.Windows.Forms.Label
         Me.ep = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.chkRememberMe = New System.Windows.Forms.CheckBox
+        Me.btnLogin = New System.Windows.Forms.Button
+        Me.btnCancel = New System.Windows.Forms.Button
+        Me.lblpassword = New System.Windows.Forms.Label
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.ep, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,39 +52,16 @@ Partial Class Login
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(146, 45)
         Me.TableLayoutPanel1.TabIndex = 0
         '
-        'btnLogin
-        '
-        Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnLogin.Image = Global.Account.My.Resources.Resources.Repair
-        Me.btnLogin.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnLogin.Location = New System.Drawing.Point(3, 3)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(67, 38)
-        Me.btnLogin.TabIndex = 0
-        Me.btnLogin.Text = "Login"
-        Me.btnLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Image = Global.Account.My.Resources.Resources.Back
-        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCancel.Location = New System.Drawing.Point(76, 3)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(67, 38)
-        Me.btnCancel.TabIndex = 1
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
         'lbluser
         '
-        Me.lbluser.AutoSize = True
+        Me.lbluser.Image = Global.Account.My.Resources.Resources.user
+        Me.lbluser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lbluser.Location = New System.Drawing.Point(13, 12)
         Me.lbluser.Name = "lbluser"
-        Me.lbluser.Size = New System.Drawing.Size(60, 13)
+        Me.lbluser.Size = New System.Drawing.Size(81, 20)
         Me.lbluser.TabIndex = 1
         Me.lbluser.Text = "User Name"
+        Me.lbluser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtuser
         '
@@ -101,15 +78,6 @@ Partial Class Login
         Me.txtpassword.Size = New System.Drawing.Size(177, 20)
         Me.txtpassword.TabIndex = 4
         '
-        'lblpassword
-        '
-        Me.lblpassword.AutoSize = True
-        Me.lblpassword.Location = New System.Drawing.Point(13, 38)
-        Me.lblpassword.Name = "lblpassword"
-        Me.lblpassword.Size = New System.Drawing.Size(53, 13)
-        Me.lblpassword.TabIndex = 3
-        Me.lblpassword.Text = "Password"
-        '
         'ep
         '
         Me.ep.ContainerControl = Me
@@ -123,6 +91,42 @@ Partial Class Login
         Me.chkRememberMe.TabIndex = 5
         Me.chkRememberMe.Text = "Remember Me"
         Me.chkRememberMe.UseVisualStyleBackColor = True
+        '
+        'btnLogin
+        '
+        Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnLogin.Image = Global.Account.My.Resources.Resources.Back
+        Me.btnLogin.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnLogin.Location = New System.Drawing.Point(3, 3)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(67, 38)
+        Me.btnLogin.TabIndex = 0
+        Me.btnLogin.Text = "Login"
+        Me.btnLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancel.Image = Global.Account.My.Resources.Resources._Exit
+        Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCancel.Location = New System.Drawing.Point(76, 3)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(67, 38)
+        Me.btnCancel.TabIndex = 1
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'lblpassword
+        '
+        Me.lblpassword.Image = Global.Account.My.Resources.Resources.Key
+        Me.lblpassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblpassword.Location = New System.Drawing.Point(13, 38)
+        Me.lblpassword.Name = "lblpassword"
+        Me.lblpassword.Size = New System.Drawing.Size(81, 20)
+        Me.lblpassword.TabIndex = 3
+        Me.lblpassword.Text = "Password"
+        Me.lblpassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Login
         '

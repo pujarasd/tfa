@@ -24,12 +24,16 @@ Partial Class Main
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.mnuLogin = New System.Windows.Forms.MenuStrip
-        Me.miLogin = New System.Windows.Forms.ToolStripMenuItem
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
         Me.slblUser = New System.Windows.Forms.ToolStripStatusLabel
         Me.slblPeriod = New System.Windows.Forms.ToolStripStatusLabel
         Me.slblCompany = New System.Windows.Forms.ToolStripStatusLabel
         Me.mnuMain = New System.Windows.Forms.MenuStrip
+        Me.miInventory = New System.Windows.Forms.ToolStripMenuItem
+        Me.miChallan = New System.Windows.Forms.ToolStripMenuItem
+        Me.miInvoice = New System.Windows.Forms.ToolStripMenuItem
+        Me.miChallanPrint = New System.Windows.Forms.ToolStripMenuItem
+        Me.miLogin = New System.Windows.Forms.ToolStripMenuItem
         Me.miCompany = New System.Windows.Forms.ToolStripMenuItem
         Me.miPeriod = New System.Windows.Forms.ToolStripMenuItem
         Me.miMasters = New System.Windows.Forms.ToolStripMenuItem
@@ -49,9 +53,6 @@ Partial Class Main
         Me.miTransport = New System.Windows.Forms.ToolStripMenuItem
         Me.miUser = New System.Windows.Forms.ToolStripMenuItem
         Me.miVoucherMain = New System.Windows.Forms.ToolStripMenuItem
-        Me.miInventory = New System.Windows.Forms.ToolStripMenuItem
-        Me.miChallan = New System.Windows.Forms.ToolStripMenuItem
-        Me.miInvoice = New System.Windows.Forms.ToolStripMenuItem
         Me.miReport = New System.Windows.Forms.ToolStripMenuItem
         Me.LorryChallanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.InvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -70,7 +71,6 @@ Partial Class Main
         Me.Help = New System.Windows.Forms.ToolStripMenuItem
         Me.miWindow = New System.Windows.Forms.ToolStripMenuItem
         Me.miLogout = New System.Windows.Forms.ToolStripMenuItem
-        Me.miChallanPrint = New System.Windows.Forms.ToolStripMenuItem
         Me.mnuLogin.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.mnuMain.SuspendLayout()
@@ -84,12 +84,6 @@ Partial Class Main
         Me.mnuLogin.Size = New System.Drawing.Size(771, 24)
         Me.mnuLogin.TabIndex = 1
         Me.mnuLogin.Text = "Main Menu"
-        '
-        'miLogin
-        '
-        Me.miLogin.Name = "miLogin"
-        Me.miLogin.Size = New System.Drawing.Size(49, 20)
-        Me.miLogin.Text = "Login"
         '
         'StatusStrip1
         '
@@ -136,128 +130,13 @@ Partial Class Main
         Me.mnuMain.TabIndex = 4
         Me.mnuMain.Text = "Main Menu"
         '
-        'miCompany
-        '
-        Me.miCompany.Name = "miCompany"
-        Me.miCompany.Size = New System.Drawing.Size(71, 20)
-        Me.miCompany.Text = "Company"
-        '
-        'miPeriod
-        '
-        Me.miPeriod.Name = "miPeriod"
-        Me.miPeriod.Size = New System.Drawing.Size(53, 20)
-        Me.miPeriod.Text = "Period"
-        '
-        'miMasters
-        '
-        Me.miMasters.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miLedger, Me.miAgent, Me.miLedgerGroup, Me.ToolStripSeparator1, Me.miItem, Me.miItemGroup, Me.ToolStripSeparator2, Me.miCity, Me.miState, Me.miCountry, Me.ToolStripSeparator3, Me.miCharges, Me.miBooks, Me.miTransport, Me.miUser})
-        Me.miMasters.Name = "miMasters"
-        Me.miMasters.Size = New System.Drawing.Size(60, 20)
-        Me.miMasters.Text = "Masters"
-        '
-        'miLedger
-        '
-        Me.miLedger.Name = "miLedger"
-        Me.miLedger.Size = New System.Drawing.Size(152, 22)
-        Me.miLedger.Text = "Ledger"
-        '
-        'miAgent
-        '
-        Me.miAgent.Name = "miAgent"
-        Me.miAgent.Size = New System.Drawing.Size(152, 22)
-        Me.miAgent.Text = "Agent"
-        '
-        'miLedgerGroup
-        '
-        Me.miLedgerGroup.Name = "miLedgerGroup"
-        Me.miLedgerGroup.Size = New System.Drawing.Size(152, 22)
-        Me.miLedgerGroup.Text = "Ledger Group"
-        Me.miLedgerGroup.Visible = False
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
-        '
-        'miItem
-        '
-        Me.miItem.Name = "miItem"
-        Me.miItem.Size = New System.Drawing.Size(152, 22)
-        Me.miItem.Text = "Item"
-        Me.miItem.Visible = False
-        '
-        'miItemGroup
-        '
-        Me.miItemGroup.Name = "miItemGroup"
-        Me.miItemGroup.Size = New System.Drawing.Size(152, 22)
-        Me.miItemGroup.Text = "Item Group"
-        Me.miItemGroup.Visible = False
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(149, 6)
-        Me.ToolStripSeparator2.Visible = False
-        '
-        'miCity
-        '
-        Me.miCity.Name = "miCity"
-        Me.miCity.Size = New System.Drawing.Size(152, 22)
-        Me.miCity.Text = "City"
-        '
-        'miState
-        '
-        Me.miState.Name = "miState"
-        Me.miState.Size = New System.Drawing.Size(152, 22)
-        Me.miState.Text = "State"
-        '
-        'miCountry
-        '
-        Me.miCountry.Name = "miCountry"
-        Me.miCountry.Size = New System.Drawing.Size(152, 22)
-        Me.miCountry.Text = "Country"
-        Me.miCountry.Visible = False
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(149, 6)
-        '
-        'miCharges
-        '
-        Me.miCharges.Name = "miCharges"
-        Me.miCharges.Size = New System.Drawing.Size(152, 22)
-        Me.miCharges.Text = "Charges "
-        '
-        'miBooks
-        '
-        Me.miBooks.Name = "miBooks"
-        Me.miBooks.Size = New System.Drawing.Size(152, 22)
-        Me.miBooks.Text = "Books"
-        '
-        'miTransport
-        '
-        Me.miTransport.Name = "miTransport"
-        Me.miTransport.Size = New System.Drawing.Size(152, 22)
-        Me.miTransport.Text = "Transport"
-        '
-        'miUser
-        '
-        Me.miUser.Name = "miUser"
-        Me.miUser.Size = New System.Drawing.Size(152, 22)
-        Me.miUser.Text = "Users"
-        '
-        'miVoucherMain
-        '
-        Me.miVoucherMain.Name = "miVoucherMain"
-        Me.miVoucherMain.Size = New System.Drawing.Size(63, 20)
-        Me.miVoucherMain.Text = "Voucher"
-        '
         'miInventory
         '
         Me.miInventory.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miChallan, Me.miInvoice})
+        Me.miInventory.Image = Global.Account.My.Resources.Resources.cart
+        Me.miInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.miInventory.Name = "miInventory"
-        Me.miInventory.Size = New System.Drawing.Size(69, 20)
+        Me.miInventory.Size = New System.Drawing.Size(85, 20)
         Me.miInventory.Text = "Inventory"
         '
         'miChallan
@@ -272,46 +151,187 @@ Partial Class Main
         Me.miInvoice.Size = New System.Drawing.Size(152, 22)
         Me.miInvoice.Text = "Invoice"
         '
+        'miChallanPrint
+        '
+        Me.miChallanPrint.Name = "miChallanPrint"
+        Me.miChallanPrint.Size = New System.Drawing.Size(152, 22)
+        Me.miChallanPrint.Text = "Challan Print"
+        '
+        'miLogin
+        '
+        Me.miLogin.Image = Global.Account.My.Resources.Resources.user
+        Me.miLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.miLogin.Name = "miLogin"
+        Me.miLogin.Size = New System.Drawing.Size(65, 20)
+        Me.miLogin.Text = "Login"
+        '
+        'miCompany
+        '
+        Me.miCompany.Image = Global.Account.My.Resources.Resources.Home_16x16
+        Me.miCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.miCompany.Name = "miCompany"
+        Me.miCompany.Size = New System.Drawing.Size(87, 20)
+        Me.miCompany.Text = "Company"
+        '
+        'miPeriod
+        '
+        Me.miPeriod.Image = Global.Account.My.Resources.Resources.Calendar_16x16
+        Me.miPeriod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.miPeriod.Name = "miPeriod"
+        Me.miPeriod.Size = New System.Drawing.Size(69, 20)
+        Me.miPeriod.Text = "Period"
+        '
+        'miMasters
+        '
+        Me.miMasters.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miLedger, Me.miAgent, Me.miLedgerGroup, Me.ToolStripSeparator1, Me.miItem, Me.miItemGroup, Me.ToolStripSeparator2, Me.miCity, Me.miState, Me.miCountry, Me.ToolStripSeparator3, Me.miCharges, Me.miBooks, Me.miTransport, Me.miUser})
+        Me.miMasters.Image = Global.Account.My.Resources.Resources.Folder
+        Me.miMasters.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.miMasters.Name = "miMasters"
+        Me.miMasters.Size = New System.Drawing.Size(76, 20)
+        Me.miMasters.Text = "Masters"
+        '
+        'miLedger
+        '
+        Me.miLedger.Name = "miLedger"
+        Me.miLedger.Size = New System.Drawing.Size(146, 22)
+        Me.miLedger.Text = "Ledger"
+        '
+        'miAgent
+        '
+        Me.miAgent.Name = "miAgent"
+        Me.miAgent.Size = New System.Drawing.Size(146, 22)
+        Me.miAgent.Text = "Agent"
+        '
+        'miLedgerGroup
+        '
+        Me.miLedgerGroup.Name = "miLedgerGroup"
+        Me.miLedgerGroup.Size = New System.Drawing.Size(146, 22)
+        Me.miLedgerGroup.Text = "Ledger Group"
+        Me.miLedgerGroup.Visible = False
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(143, 6)
+        '
+        'miItem
+        '
+        Me.miItem.Name = "miItem"
+        Me.miItem.Size = New System.Drawing.Size(146, 22)
+        Me.miItem.Text = "Item"
+        Me.miItem.Visible = False
+        '
+        'miItemGroup
+        '
+        Me.miItemGroup.Name = "miItemGroup"
+        Me.miItemGroup.Size = New System.Drawing.Size(146, 22)
+        Me.miItemGroup.Text = "Item Group"
+        Me.miItemGroup.Visible = False
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(143, 6)
+        Me.ToolStripSeparator2.Visible = False
+        '
+        'miCity
+        '
+        Me.miCity.Name = "miCity"
+        Me.miCity.Size = New System.Drawing.Size(146, 22)
+        Me.miCity.Text = "City"
+        '
+        'miState
+        '
+        Me.miState.Name = "miState"
+        Me.miState.Size = New System.Drawing.Size(146, 22)
+        Me.miState.Text = "State"
+        '
+        'miCountry
+        '
+        Me.miCountry.Name = "miCountry"
+        Me.miCountry.Size = New System.Drawing.Size(146, 22)
+        Me.miCountry.Text = "Country"
+        Me.miCountry.Visible = False
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(143, 6)
+        '
+        'miCharges
+        '
+        Me.miCharges.Name = "miCharges"
+        Me.miCharges.Size = New System.Drawing.Size(146, 22)
+        Me.miCharges.Text = "Charges "
+        '
+        'miBooks
+        '
+        Me.miBooks.Name = "miBooks"
+        Me.miBooks.Size = New System.Drawing.Size(146, 22)
+        Me.miBooks.Text = "Books"
+        '
+        'miTransport
+        '
+        Me.miTransport.Name = "miTransport"
+        Me.miTransport.Size = New System.Drawing.Size(146, 22)
+        Me.miTransport.Text = "Transport"
+        '
+        'miUser
+        '
+        Me.miUser.Name = "miUser"
+        Me.miUser.Size = New System.Drawing.Size(146, 22)
+        Me.miUser.Text = "Users"
+        '
+        'miVoucherMain
+        '
+        Me.miVoucherMain.Image = Global.Account.My.Resources.Resources.document_prepare
+        Me.miVoucherMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.miVoucherMain.Name = "miVoucherMain"
+        Me.miVoucherMain.Size = New System.Drawing.Size(79, 20)
+        Me.miVoucherMain.Text = "Voucher"
+        '
         'miReport
         '
         Me.miReport.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LorryChallanToolStripMenuItem, Me.InvoiceToolStripMenuItem, Me.ToolStripSeparator4, Me.RegisterToolStripMenuItem, Me.ToolStripSeparator5, Me.StatementsToolStripMenuItem, Me.FAReportsToolStripMenuItem})
+        Me.miReport.Image = Global.Account.My.Resources.Resources.Report
+        Me.miReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.miReport.Name = "miReport"
-        Me.miReport.Size = New System.Drawing.Size(59, 20)
+        Me.miReport.Size = New System.Drawing.Size(75, 20)
         Me.miReport.Text = "Reports"
         '
         'LorryChallanToolStripMenuItem
         '
         Me.LorryChallanToolStripMenuItem.Name = "LorryChallanToolStripMenuItem"
-        Me.LorryChallanToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LorryChallanToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.LorryChallanToolStripMenuItem.Text = "Lorry &Challan"
         '
         'InvoiceToolStripMenuItem
         '
         Me.InvoiceToolStripMenuItem.Name = "InvoiceToolStripMenuItem"
-        Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.InvoiceToolStripMenuItem.Text = "&Invoice"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(141, 6)
         '
         'RegisterToolStripMenuItem
         '
         Me.RegisterToolStripMenuItem.Name = "RegisterToolStripMenuItem"
-        Me.RegisterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.RegisterToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.RegisterToolStripMenuItem.Text = "&Register"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(141, 6)
         '
         'StatementsToolStripMenuItem
         '
         Me.StatementsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ServiceTaxStatementToolStripMenuItem1, Me.TdsStatmentToolStripMenuItem1, Me.FreightMarginToolStripMenuItem, Me.FreightMarginRVToolStripMenuItem})
         Me.StatementsToolStripMenuItem.Name = "StatementsToolStripMenuItem"
-        Me.StatementsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StatementsToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.StatementsToolStripMenuItem.Text = "Statements"
         '
         'ServiceTaxStatementToolStripMenuItem1
@@ -342,50 +362,52 @@ Partial Class Main
         '
         Me.FAReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PartyLedgerToolStripMenuItem, Me.TrialBalanceToolStripMenuItem})
         Me.FAReportsToolStripMenuItem.Name = "FAReportsToolStripMenuItem"
-        Me.FAReportsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FAReportsToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.FAReportsToolStripMenuItem.Text = "FA Reports"
         '
         'PartyLedgerToolStripMenuItem
         '
         Me.PartyLedgerToolStripMenuItem.Name = "PartyLedgerToolStripMenuItem"
-        Me.PartyLedgerToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PartyLedgerToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
         Me.PartyLedgerToolStripMenuItem.Text = "Party &Ledger"
         '
         'TrialBalanceToolStripMenuItem
         '
         Me.TrialBalanceToolStripMenuItem.Name = "TrialBalanceToolStripMenuItem"
-        Me.TrialBalanceToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TrialBalanceToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
         Me.TrialBalanceToolStripMenuItem.Text = "Trial Balance"
         '
         'miTools
         '
+        Me.miTools.Image = Global.Account.My.Resources.Resources.setting_tools
+        Me.miTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.miTools.Name = "miTools"
-        Me.miTools.Size = New System.Drawing.Size(48, 20)
+        Me.miTools.Size = New System.Drawing.Size(64, 20)
         Me.miTools.Text = "Tools"
         '
         'Help
         '
+        Me.Help.Image = Global.Account.My.Resources.Resources.help
+        Me.Help.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Help.Name = "Help"
-        Me.Help.Size = New System.Drawing.Size(44, 20)
+        Me.Help.Size = New System.Drawing.Size(60, 20)
         Me.Help.Text = "Help"
         '
         'miWindow
         '
+        Me.miWindow.Image = Global.Account.My.Resources.Resources.widescreen
+        Me.miWindow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.miWindow.Name = "miWindow"
-        Me.miWindow.Size = New System.Drawing.Size(68, 20)
+        Me.miWindow.Size = New System.Drawing.Size(84, 20)
         Me.miWindow.Text = "Windows"
         '
         'miLogout
         '
+        Me.miLogout.Image = Global.Account.My.Resources.Resources._Exit
+        Me.miLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.miLogout.Name = "miLogout"
-        Me.miLogout.Size = New System.Drawing.Size(57, 20)
+        Me.miLogout.Size = New System.Drawing.Size(73, 20)
         Me.miLogout.Text = "Logout"
-        '
-        'miChallanPrint
-        '
-        Me.miChallanPrint.Name = "miChallanPrint"
-        Me.miChallanPrint.Size = New System.Drawing.Size(152, 22)
-        Me.miChallanPrint.Text = "Challan Print"
         '
         'Main
         '

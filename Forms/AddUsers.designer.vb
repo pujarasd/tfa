@@ -22,12 +22,13 @@ Partial Class AddUsers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddUsers))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-        Me.OK_Button = New System.Windows.Forms.Button
-        Me.Cancel_Button = New System.Windows.Forms.Button
         Me.txtUsers = New System.Windows.Forms.NumericUpDown
         Me.lblNoOfUsers = New System.Windows.Forms.Label
         Me.lblmsg = New System.Windows.Forms.Label
+        Me.OK_Button = New System.Windows.Forms.Button
+        Me.Cancel_Button = New System.Windows.Forms.Button
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.txtUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,25 +47,6 @@ Partial Class AddUsers
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(146, 29)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'OK_Button
-        '
-        Me.OK_Button.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.OK_Button.Location = New System.Drawing.Point(3, 3)
-        Me.OK_Button.Name = "OK_Button"
-        Me.OK_Button.Size = New System.Drawing.Size(67, 23)
-        Me.OK_Button.TabIndex = 0
-        Me.OK_Button.Text = "OK"
-        '
-        'Cancel_Button
-        '
-        Me.Cancel_Button.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel_Button.Location = New System.Drawing.Point(76, 3)
-        Me.Cancel_Button.Name = "Cancel_Button"
-        Me.Cancel_Button.Size = New System.Drawing.Size(67, 23)
-        Me.Cancel_Button.TabIndex = 1
-        Me.Cancel_Button.Text = "Cancel"
         '
         'txtUsers
         '
@@ -97,6 +79,30 @@ Partial Class AddUsers
             " in evaluation mode. You shall have to get activation code again."
         Me.lblmsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'OK_Button
+        '
+        Me.OK_Button.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.OK_Button.Image = Global.Account.My.Resources.Resources.OK
+        Me.OK_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.OK_Button.Location = New System.Drawing.Point(3, 3)
+        Me.OK_Button.Name = "OK_Button"
+        Me.OK_Button.Size = New System.Drawing.Size(67, 23)
+        Me.OK_Button.TabIndex = 0
+        Me.OK_Button.Text = "OK"
+        '
+        'Cancel_Button
+        '
+        Me.Cancel_Button.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Cancel_Button.Image = Global.Account.My.Resources.Resources.cancel
+        Me.Cancel_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Cancel_Button.Location = New System.Drawing.Point(76, 3)
+        Me.Cancel_Button.Name = "Cancel_Button"
+        Me.Cancel_Button.Size = New System.Drawing.Size(67, 23)
+        Me.Cancel_Button.TabIndex = 1
+        Me.Cancel_Button.Text = "Cancel"
+        Me.Cancel_Button.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'AddUsers
         '
         Me.AcceptButton = Me.OK_Button
@@ -109,6 +115,7 @@ Partial Class AddUsers
         Me.Controls.Add(Me.txtUsers)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "AddUsers"

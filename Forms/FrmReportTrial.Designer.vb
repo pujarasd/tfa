@@ -27,12 +27,12 @@ Partial Class FrmReportTrial
         Me.Label1 = New System.Windows.Forms.Label
         Me.chkConsole = New System.Windows.Forms.CheckBox
         Me.dtpFrom = New System.Windows.Forms.DateTimePicker
-        Me.btnOk = New System.Windows.Forms.Button
         Me.btnPrint = New System.Windows.Forms.Button
         Me.numBal = New Account.NumTextBox
         Me.numCredit = New Account.NumTextBox
         Me.numDebit = New Account.NumTextBox
         Me.dgv = New Account.DataGridViewEnter
+        Me.btnOk = New System.Windows.Forms.Button
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -74,26 +74,16 @@ Partial Class FrmReportTrial
         Me.dtpFrom.Size = New System.Drawing.Size(78, 20)
         Me.dtpFrom.TabIndex = 6
         '
-        'btnOk
-        '
-        Me.btnOk.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnOk.Location = New System.Drawing.Point(273, 6)
-        Me.btnOk.Name = "btnOk"
-        Me.btnOk.Size = New System.Drawing.Size(64, 22)
-        Me.btnOk.TabIndex = 11
-        Me.btnOk.Text = "&Show"
-        Me.btnOk.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnOk.UseVisualStyleBackColor = True
-        '
         'btnPrint
         '
-        Me.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPrint.Image = Global.Account.My.Resources.Resources.Print
+        Me.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnPrint.Location = New System.Drawing.Point(534, 6)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(64, 22)
         Me.btnPrint.TabIndex = 12
         Me.btnPrint.Text = "&Print"
-        Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnPrint.UseVisualStyleBackColor = True
         '
         'numBal
@@ -146,6 +136,18 @@ Partial Class FrmReportTrial
         Me.dgv.RowHeadersVisible = False
         Me.dgv.Size = New System.Drawing.Size(592, 304)
         Me.dgv.TabIndex = 2
+        '
+        'btnOk
+        '
+        Me.btnOk.Image = Global.Account.My.Resources.Resources.Zoom
+        Me.btnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOk.Location = New System.Drawing.Point(273, 6)
+        Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(64, 22)
+        Me.btnOk.TabIndex = 11
+        Me.btnOk.Text = "&Show"
+        Me.btnOk.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnOk.UseVisualStyleBackColor = True
         '
         'FrmReportTrial
         '

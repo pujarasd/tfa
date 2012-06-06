@@ -22,6 +22,7 @@ Partial Class ChallanList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChallanList))
         Me.dgv = New System.Windows.Forms.DataGridView
         Me.btnClose = New System.Windows.Forms.Button
         Me.btnNew = New System.Windows.Forms.Button
@@ -46,39 +47,51 @@ Partial Class ChallanList
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(285, 277)
+        Me.btnClose.Image = Global.Account.My.Resources.Resources.Back
+        Me.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnClose.Location = New System.Drawing.Point(285, 283)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(75, 23)
+        Me.btnClose.Size = New System.Drawing.Size(75, 39)
         Me.btnClose.TabIndex = 1
-        Me.btnClose.Text = "&Close"
+        Me.btnClose.Text = "&Back"
+        Me.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'btnNew
         '
-        Me.btnNew.Location = New System.Drawing.Point(42, 276)
+        Me.btnNew.Image = Global.Account.My.Resources.Resources._New
+        Me.btnNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnNew.Location = New System.Drawing.Point(42, 282)
         Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(75, 23)
+        Me.btnNew.Size = New System.Drawing.Size(75, 39)
         Me.btnNew.TabIndex = 2
         Me.btnNew.Text = "&New"
+        Me.btnNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnNew.UseVisualStyleBackColor = True
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(123, 276)
+        Me.btnEdit.Image = Global.Account.My.Resources.Resources.edit
+        Me.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnEdit.Location = New System.Drawing.Point(123, 282)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(75, 23)
+        Me.btnEdit.Size = New System.Drawing.Size(75, 39)
         Me.btnEdit.TabIndex = 2
         Me.btnEdit.Text = "&Edit"
+        Me.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEdit.UseVisualStyleBackColor = True
         Me.btnEdit.Visible = False
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(204, 276)
+        Me.btnDelete.Image = Global.Account.My.Resources.Resources.delete
+        Me.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnDelete.Location = New System.Drawing.Point(204, 282)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.Size = New System.Drawing.Size(75, 39)
         Me.btnDelete.TabIndex = 2
         Me.btnDelete.Text = "&Delete"
+        Me.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnDelete.UseVisualStyleBackColor = True
         Me.btnDelete.Visible = False
         '
@@ -91,11 +104,14 @@ Partial Class ChallanList
         '
         'btnClear
         '
+        Me.btnClear.Image = Global.Account.My.Resources.Resources.Zoom
+        Me.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnClear.Location = New System.Drawing.Point(287, 10)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 23)
         Me.btnClear.TabIndex = 5
         Me.btnClear.Text = "&Show All"
+        Me.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnClear.UseVisualStyleBackColor = True
         '
         'cmbSearchType
@@ -110,7 +126,7 @@ Partial Class ChallanList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(370, 313)
+        Me.ClientSize = New System.Drawing.Size(370, 327)
         Me.Controls.Add(Me.cmbSearchType)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.txtSearch)
@@ -119,6 +135,7 @@ Partial Class ChallanList
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.dgv)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "ChallanList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

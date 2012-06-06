@@ -37,10 +37,10 @@ Partial Class FrmReport1
         Me.lblnoto = New System.Windows.Forms.Label
         Me.cboSelect = New System.Windows.Forms.ComboBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.chkAmount = New System.Windows.Forms.CheckBox
-        Me.chkConsole = New System.Windows.Forms.CheckBox
         Me.NumTextBox2 = New Account.NumTextBox
         Me.NumTextBox1 = New Account.NumTextBox
+        Me.chkAmount = New System.Windows.Forms.CheckBox
+        Me.chkConsole = New System.Windows.Forms.CheckBox
         Me.grpReportwise.SuspendLayout()
         Me.grpDetailSummary.SuspendLayout()
         Me.grpRange.SuspendLayout()
@@ -125,7 +125,7 @@ Partial Class FrmReport1
         '
         'btnCancel
         '
-        Me.btnCancel.Image = Global.Account.My.Resources.Resources.Back
+        Me.btnCancel.Image = Global.Account.My.Resources.Resources.cancel
         Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCancel.Location = New System.Drawing.Point(188, 157)
         Me.btnCancel.Name = "btnCancel"
@@ -221,27 +221,6 @@ Partial Class FrmReport1
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
-        'chkAmount
-        '
-        Me.chkAmount.AutoSize = True
-        Me.chkAmount.Location = New System.Drawing.Point(8, 158)
-        Me.chkAmount.Name = "chkAmount"
-        Me.chkAmount.Size = New System.Drawing.Size(86, 17)
-        Me.chkAmount.TabIndex = 6
-        Me.chkAmount.Text = "Amount Only"
-        Me.chkAmount.UseVisualStyleBackColor = True
-        '
-        'chkConsole
-        '
-        Me.chkConsole.AutoSize = True
-        Me.chkConsole.ForeColor = System.Drawing.Color.Blue
-        Me.chkConsole.Location = New System.Drawing.Point(8, 178)
-        Me.chkConsole.Name = "chkConsole"
-        Me.chkConsole.Size = New System.Drawing.Size(87, 17)
-        Me.chkConsole.TabIndex = 7
-        Me.chkConsole.Text = "Consolidated"
-        Me.chkConsole.UseVisualStyleBackColor = True
-        '
         'NumTextBox2
         '
         Me.NumTextBox2.dec = CType(4, Short)
@@ -265,6 +244,27 @@ Partial Class FrmReport1
         Me.NumTextBox1.Text = "0.0000"
         Me.NumTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.NumTextBox1.value = 0
+        '
+        'chkAmount
+        '
+        Me.chkAmount.AutoSize = True
+        Me.chkAmount.Location = New System.Drawing.Point(8, 158)
+        Me.chkAmount.Name = "chkAmount"
+        Me.chkAmount.Size = New System.Drawing.Size(86, 17)
+        Me.chkAmount.TabIndex = 6
+        Me.chkAmount.Text = "Amount Only"
+        Me.chkAmount.UseVisualStyleBackColor = True
+        '
+        'chkConsole
+        '
+        Me.chkConsole.AutoSize = True
+        Me.chkConsole.ForeColor = System.Drawing.Color.Blue
+        Me.chkConsole.Location = New System.Drawing.Point(8, 178)
+        Me.chkConsole.Name = "chkConsole"
+        Me.chkConsole.Size = New System.Drawing.Size(87, 17)
+        Me.chkConsole.TabIndex = 7
+        Me.chkConsole.Text = "Consolidated"
+        Me.chkConsole.UseVisualStyleBackColor = True
         '
         'FrmReport1
         '

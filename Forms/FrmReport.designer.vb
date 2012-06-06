@@ -31,6 +31,8 @@ Partial Class FrmReport
         Me.btnOk = New System.Windows.Forms.Button
         Me.btnCancel = New System.Windows.Forms.Button
         Me.grpRange = New System.Windows.Forms.GroupBox
+        Me.txtNoto = New Account.NumTextBox
+        Me.txtNofrom = New Account.NumTextBox
         Me.dtpTo = New System.Windows.Forms.DateTimePicker
         Me.dtpFrom = New System.Windows.Forms.DateTimePicker
         Me.lbldtfrom = New System.Windows.Forms.Label
@@ -39,8 +41,6 @@ Partial Class FrmReport
         Me.lblnoto = New System.Windows.Forms.Label
         Me.cboSelect = New System.Windows.Forms.ComboBox
         Me.chkConsole = New System.Windows.Forms.CheckBox
-        Me.txtNoto = New Account.NumTextBox
-        Me.txtNofrom = New Account.NumTextBox
         Me.grpReportwise.SuspendLayout()
         Me.grpDetailSummary.SuspendLayout()
         Me.grpRange.SuspendLayout()
@@ -148,7 +148,7 @@ Partial Class FrmReport
         '
         'btnCancel
         '
-        Me.btnCancel.Image = Global.Account.My.Resources.Resources.Back
+        Me.btnCancel.Image = Global.Account.My.Resources.Resources.cancel
         Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCancel.Location = New System.Drawing.Point(322, 98)
         Me.btnCancel.Name = "btnCancel"
@@ -173,6 +173,32 @@ Partial Class FrmReport
         Me.grpRange.Size = New System.Drawing.Size(265, 40)
         Me.grpRange.TabIndex = 4
         Me.grpRange.TabStop = False
+        '
+        'txtNoto
+        '
+        Me.txtNoto.dec = CType(0, Short)
+        Me.txtNoto.format = Nothing
+        Me.txtNoto.Location = New System.Drawing.Point(182, 11)
+        Me.txtNoto.Name = "txtNoto"
+        Me.txtNoto.Size = New System.Drawing.Size(45, 20)
+        Me.txtNoto.TabIndex = 8
+        Me.txtNoto.Text = "0"
+        Me.txtNoto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtNoto.value = 0
+        Me.txtNoto.Visible = False
+        '
+        'txtNofrom
+        '
+        Me.txtNofrom.dec = CType(0, Short)
+        Me.txtNofrom.format = Nothing
+        Me.txtNofrom.Location = New System.Drawing.Point(59, 12)
+        Me.txtNofrom.Name = "txtNofrom"
+        Me.txtNofrom.Size = New System.Drawing.Size(45, 20)
+        Me.txtNofrom.TabIndex = 6
+        Me.txtNofrom.Text = "0"
+        Me.txtNofrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtNofrom.value = 0
+        Me.txtNofrom.Visible = False
         '
         'dtpTo
         '
@@ -248,32 +274,6 @@ Partial Class FrmReport
         Me.chkConsole.TabIndex = 8
         Me.chkConsole.Text = "Consolidated"
         Me.chkConsole.UseVisualStyleBackColor = True
-        '
-        'txtNoto
-        '
-        Me.txtNoto.dec = CType(0, Short)
-        Me.txtNoto.format = Nothing
-        Me.txtNoto.Location = New System.Drawing.Point(182, 11)
-        Me.txtNoto.Name = "txtNoto"
-        Me.txtNoto.Size = New System.Drawing.Size(45, 20)
-        Me.txtNoto.TabIndex = 8
-        Me.txtNoto.Text = "0"
-        Me.txtNoto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.txtNoto.value = 0
-        Me.txtNoto.Visible = False
-        '
-        'txtNofrom
-        '
-        Me.txtNofrom.dec = CType(0, Short)
-        Me.txtNofrom.format = Nothing
-        Me.txtNofrom.Location = New System.Drawing.Point(59, 12)
-        Me.txtNofrom.Name = "txtNofrom"
-        Me.txtNofrom.Size = New System.Drawing.Size(45, 20)
-        Me.txtNofrom.TabIndex = 6
-        Me.txtNofrom.Text = "0"
-        Me.txtNofrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.txtNofrom.value = 0
-        Me.txtNofrom.Visible = False
         '
         'FrmReport
         '
